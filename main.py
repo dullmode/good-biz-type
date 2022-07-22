@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
 import statsmodels.api as sm
 
 p_df = pd.read_csv('data/input/processor.csv')
@@ -29,7 +28,7 @@ fig.savefig('data/output/graph/graph.png')
 
 #save heatmap
 objective_vars.append('MOS transistor count')
-fig = sns.heatmap(df[l].corr(), annot=True, cmap='Blues')
+fig = sns.heatmap(df[objective_vars].corr(), annot=True, cmap='Blues')
 plt.gcf().set_size_inches(15, 8)
 fig.figure.savefig('data/output/graph/heatmap.png')
 objective_vars.remove('MOS transistor count')
